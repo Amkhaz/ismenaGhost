@@ -1,4 +1,4 @@
-# Ghost Blog Deployment
+# Ghost GCP Deployment
 
 ## Overview
 This repository contains the necessary configurations and procedures to deploy a Ghost blog platform using Nginx as a reverse proxy, along with SSL configuration, on GCP.
