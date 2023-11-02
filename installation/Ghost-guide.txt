@@ -1,0 +1,69 @@
+On ubuntu GCP VM
+
+Update packages
+Ensure package lists and installed packages are up to date.
+
+# Update package lists
+sudo apt-get update
+
+# Update installed packages
+sudo apt-get upgrade
+Follow any prompts to enter the password you just created in the previous step.
+
+Install NGINX
+Ghost uses an NGINX server and the SSL configuration requires NGINX 1.9.5 or higher.
+
+# Install NGINX
+sudo apt-get install nginx
+If ufw was activated, the firewall allows HTTP and HTTPS connections. Open Firewall:
+
+sudo ufw allow 'Nginx Full'
+
+configure the nginx for your website (ssl cert and key, ports,...)
+
+Install MySQL
+Next, you’ll need to install MySQL to be used as the production database.
+
+
+# Download and import the Nodesource GPG key
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+# Create deb repository
+NODE_MAJOR=18 # Use a supported version
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+# Run update and install
+sudo apt-get update
+sudo apt-get install nodejs -y
+Install Ghost-CLI
+Ghost-CLI is a commandline tool to help you get Ghost installed and configured for use, quickly and easily. The npm module can be installed with npm or yarn.
+
+sudo npm install ghost-cli@latest -g
+Once installed, you can always run ghost help to see a list of available commands.
+
+Install Ghost
+Once your server is correctly setup and ghost-cli is installed, you can install Ghost itself. The following steps are the recommended setup. If you need more fine-grained control, the CLI has flags and options that allow you to break down and customise the install steps.
+
+Create a directory
+Ghost must be installed in its own directory, with a proper owner and permissions.
+
+# Create directory: Change `sitename` to whatever you like
+sudo mkdir -p /var/www/sitename
+
+# Set directory owner: Replace <user> with the name of your user
+sudo chown <user>:<user> /var/www/sitename
+
+# Set the correct permissions
+sudo chmod 775 /var/www/sitename
+
+# Then navigate into it
+cd /var/www/sitename
+Run the install process
+Now we install Ghost with one final command.
+
+ghost install
+
+then you need to type the informations needed ( domain name, VM ip, SQL information )
