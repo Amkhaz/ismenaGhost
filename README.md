@@ -53,7 +53,7 @@ Ensure your domain's DNS settings point the A record to the GCP VM's external IP
 ├── installation/
 │   ├── Ghost-guide.txt/
 │
-├── GCP-architecture.drawio.pdf
+├── GCP-architecture.pdf
 │      
 └── README.md
 ```
