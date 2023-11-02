@@ -31,6 +31,7 @@ This repository contains the necessary configurations and procedures to deploy a
 - The SSL certificate and private key are placed in the Nginx configuration to secure the blog.
 
 ## Instructions
+- guide in installation folder
 
 
 ### Nginx Configuration
@@ -55,7 +56,12 @@ If your cloud VM does not retain data after reboot, set up persistent storage ac
 /
 ├── configurations/
 │   ├── nginx/
-│   │   └── isolutionsghost.fr.conf
+│      └── isolutionsghost.fr.conf
+├── installation/
+│   ├── Ghost-guide.txt/
+│
+├── GCP-architecture.drawio.pdf
+│      
 └── README.md
 ```
 
