@@ -18,7 +18,7 @@ This repository contains the necessary configurations and procedures to deploy a
 - **Version**: `5.71.1`
 - **Node Version**: `v18.18.2`
 - **Environment**: Development
-- **Site URL**: `https://isolutionsghost.fr`
+- **Site URL**: `https://testGhost.fr
 
 ### Nginx
 - Configured as a reverse proxy to serve the Ghost blog.
